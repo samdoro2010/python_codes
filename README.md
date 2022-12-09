@@ -5,14 +5,10 @@
 [For Replit File CLICK HERE](https://replit.com/@V-KrishnaKrishn/Python-Codes#main.py )
 
 ## All Python Codes Txt file
-[For Cpp PDF all codes CLICK HERE](https://github.com/samdoro2010/python_codes/blob/main/all%20python%20codes.txt)
-
-
-## All Python Codes Txt file
-[For Cpp PDF all codes CLICK HERE](https://github.com/samdoro2010/python_codes/blob/main/all%20python%20codes.txt)
+[For Python txt all codes CLICK HERE](https://github.com/samdoro2010/python_codes/blob/main/all%20python%20codes.txt)
 
 ## All Python Codes ipynb file
-[For Cpp PDF all codes CLICK HERE](https://github.com/samdoro2010/python_codes/blob/main/python%20codes.ipynb)
+[For python ipynb all codes CLICK HERE](https://github.com/samdoro2010/python_codes/blob/main/python%20codes.ipynb)
 
 
 
