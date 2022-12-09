@@ -1,0 +1,1474 @@
+Hands on Python Programming 
+Prepared by Mohammed Miskeen Ali
+Lecturer
+Department of CSE
+SRM UNIVERSITY AP
+
+
+
+Decision Making Control
+
+1. Write a Python program to find the distance between two coordinate points 
+   (x1, y1) and (x2, y2).
+x1=eval(input("Enter x1 value:"))
+x2=eval(input("Enter x2 value:"))
+y1=eval(input("Enter y1 value:"))
+y2=eval(input("Enter y2 value:"))
+distance=(((x2-x1)**2)+((y2-y1)**2))**0.5
+print("The distance between the coordinates",(x1,y1),"and",(x2,y2),"is",distance)
+
+Output:    
+Enter x1 value:3
+Enter x2 value:4
+Enter y1 value:3
+Enter y2 value:4
+The distance between the coordinates (3, 3) and (4, 4) is 1.4142135623730951
+
+2. Write a Python program to input Percentage. 
+Calculate percentage and grade according to following: 
+Percentage >= 90% : Grade A 
+Percentage >= 80% : Grade B 
+Percentage >= 70% : Grade C 
+Percentage >= 60% : Grade D 
+Percentage >= 40% : Grade E 
+Percentage < 40% : Grade F
+
+math= eval(input(" Enter the marks secured by the candidate in Math : "))
+science= eval(input(" Enter the marks secured by the candidate in Science : "))
+history= eval(input(" Enter the marks secured by the candidate in History : "))
+english= eval(input(" Enter the marks secured by the candidate in English : "))
+per=((math+science+history+english)/400)*100
+print(" The candidate secured a percentage of: ",per)
+if per>=90:
+	print(" The candidate secured grade 'A' " )
+elif per>=80 and per<90:
+	print(" The candidate secured grade 'B' " )
+elif per>=70 and per<80:
+	print(" The candidate secured grade 'C' " )
+elif per>=60 and per<70:
+	print(" The candidate secured grade 'D' " )
+elif per>=40 and per<60:
+	print(" The candidate secured grade 'E' " )
+else:
+	print(" The candidate secured grade 'F' " )
+
+Output:
+
+
+
+
+3. Write a Python program to find maximum between three numbers.
+
+def maximum(a, b, c):
+  
+    if (a >= b) and (a >= c):
+        largest = a
+  
+    elif (b >= a) and (b >= c):
+        largest = b
+    else:
+        largest = c
+          
+    return largest
+  
+  
+a = int(input())
+b = int(input())
+c = int(input())
+print("The maximum between three numbers is:",maximum(a, b, c))
+
+Output:
+
+
+
+4. Write a Python program that computes the real roots of a quadratic function. 
+Your program should begin by prompting the user for the values of a, b and c. 
+Then it should display a message indicating the nature of real roots, 
+along with the values of the real roots (if any).
+
+Standard Quadratic Equation is ax2 + bx + c
+where,
+a, b, and c are coefficient and real numbers and also a ≠ 0.
+If a is equal to 0 that equation is not valid quadratic equation.
+
+import math 
+# function for finding roots
+def quadroots( a, b, c): 
+  
+    # calculating discriminant using formula
+    dis = b * b - 4 * a * c 
+    sqrt_val = math.sqrt(abs(dis)) 
+      
+    # checking condition for discriminant
+    if dis > 0: 
+        print(" real and different roots ") 
+        print((-b + sqrt_val)/(2 * a)) 
+        print((-b - sqrt_val)/(2 * a)) 
+      
+    elif dis == 0: 
+        print(" real and equal roots") 
+        print(-b / (2 * a)) 
+      
+    # when discriminant is less than 0
+    else:
+        print("Imaginary  Roots") 
+       
+  
+a = int(input())
+b = int(input())
+c = int(input())
+  
+# If a is 0, then incorrect equation
+if a == 0: 
+        print("Input correct quadratic equation") 
+  
+else:
+    quadroots(a, b, c)
+
+Output:
+Input :a = 1, b = 2, c = 1 
+Roots are real and same
+-1.0
+
+Input :a = 2, b = 2, c = 1
+Roots are complex
+-0.5  + i 2.0
+-0.5  - i 2.0
+
+Input :a = 1, b = 10, c = -24 
+Roots are real and different
+2.0
+-12.0
+
+5. Write a program to input angles of a triangle and
+check whether triangle is valid or not. Also, 
+validate the angles entered by the user.
+(Sum of the three angles of triangle is 180)
+
+A = eval(input("Enter the angle 'A' of the triangle: "))
+B = eval(input("Enter the angle 'B' of the triangle: "))
+C = eval(input("Enter the angle 'C' of the triangle: "))
+sum_of_angl = A+B+C
+if ((sum_of_angles == 180) and (A!=0 and B!=0 and C!=0) 
+	if (A<90 and B<90 and C<90)):
+		print(" The Triangle is VALID,sum of the angles is:",sum_of_angl)
+		print(" It is an Acute angled triangle ")
+	elif (A==90 or B==90 or C==90)):
+		print(" The Triangle is VALID, sum of the angles is:",sum_of_angl)
+		print(" It is a Right angled triangle ")
+	elif  (A>90 or B>90 or C>90)):
+		print(" The Triangle is VALID, sum of the angles is:",sum_of_angl)
+		print(" It is an Obtuse angled triangle ")
+else:
+	print(" The Triangle is INVALID,sum of the angles is:",sum_of_angl)
+
+6. Write a program to input basic salary of an employee and 
+calculate its Gross salary according to following: 
+Basic Salary <= 10000 : HRA = 20%, DA = 80% 
+Basic Salary <= 20000 : HRA = 25%, DA = 90% 
+Basic Salary > 20000 : HRA = 30%, DA = 95%
+
+basic_salary=float(input("Enter basic salary of an employee:"))
+if basic_salary <= 10000:
+	HRA=(basic_salary*20)/100
+	DA=(basic_salary*80)/100
+elif basic_salary >= 10001 and basic_salary <= 20000:
+	HRA=(basic_salary*25)/100
+	DA=(basic_salary*90)/100
+elif basic_salary > 20000:
+	HRA=(basic_salary*30)/100
+	DA=(basic_salary*95)/100
+
+Gross_Salary=basic_salary+HRA+DA
+print("The Gross Salary of an employee is:",Gross_Salary)
+
+Output:
+Enter basic salary of an employee:12000
+The Gross Salary of an employee is: 25800.0
+
+Looping Control
+
+1. Write a Python program to print the sum of the series 
+   1/2+1/3+1/4+ ... +1/N. Where N is natural number.
+
+n=int(input("Enter value of n:"))
+sum=0
+for i in range(1,n+1):
+    sum=sum+1/(1+i)
+print("Sum of the series =",sum)
+
+Output:
+Enter value of n:5
+Sum of the series = 1.45
+
+2. Write a Python program that prompts user to enter numbers.
+  The process will repeat until user enters 0. Finally, 
+  the program prints sum of the numbers entered by the user.
+sum=0
+num=1
+while num!=0:
+    num=int(input("Enter another number:"))
+    sum=sum+num
+print("Sum of the given numbers are ",sum)
+
+Output:
+Enter a number to add:10
+Enter a number to add:20
+Enter a number to add:30
+Enter a number to add:0
+Sum of the given numbers are 60
+
+3. Write a Python program to print all the numbers from 1 to 1000 
+   that are not divisible by 2, 3, 5, 7, 11, 13, 17 and 19.
+print("The numbers that are not divisible by 2,3,5,7,11,13,17 and 19 between 1-1000:")
+for i in range(1,1001):
+    if i%2!=0 and i%3!=0 and i%5!=0 and i%7!=0 and i%11!=0 and i%13!=0 and i%17!=0 and i%19!=0 :
+        print(i,end=" ")
+Output:
+The numbers that are not divisible by 2,3,5,7,11,13,17 and 19 between 1-1000:
+1 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 
+101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199 
+211 223 227 229 233 239 241 251 257 263 269 271 277 281 283 293 
+307 311 313 317 331 337 347 349 353 359 367 373 379 383 389 397 
+401 409 419 421 431 433 439 443 449 457 461 463 467 479 487 491 499 
+503 509 521 523 529 541 547 557 563 569 571 577 587 593 599 
+601 607 613 617 619 631 641 643 647 653 659 661 667 673 677 683 691 
+701 709 713 719 727 733 739 743 751 757 761 769 773 787 797 
+809 811 821 823 827 829 839 841 851 853 857 859 863 877 881 883 887 899 
+907 911 919 929 937 941 943 947 953 961 967 971 977 983 989 991 997
+
+4.Write a Python program to find HCF (GCD) of two numbers.
+x=int(input("Enter any number:"))
+y=int(input("Enter any number:"))
+if x>y:
+    small=y
+else:
+    small=x
+for i in range(1,small+1):
+    if x%i==0 and y%i==0:
+        gcd=i
+print("GCD of {} and {} is {}".format(x,y,gcd))
+Output:
+Enter any number:48
+Enter any number:60
+GCD of 48 and 60 is 12
+
+5.Write a Python program to check whether a number is Armstrong number or not.
+num=int(input("Enter any number:"))
+temp=num
+sum=0
+while(num!=0):
+    d=num%10
+    sum=sum+d**3
+    num=num//10
+if sum==temp:
+    print("The entered number %d is an armstrong number"%sum)
+else:
+    print("The entered number is not an armstrong number")
+
+Output:
+Enter any number:153
+The entered number 153 is an armstrong number
+
+6. Write a Python program to swap first and last digit of a number.
+
+def swap(n):
+    string=str(n)
+    n = [i for i in string]
+    temp = n[0]
+    n[0] = n[-1]
+    n[-1] = temp
+    str=''.join(n)
+    return int(str)
+num=int(input("Enter a number:"))
+print("Number before swapping:",num)
+result=swap(num)
+print("Number after swapping:",result)
+
+Swapping first and last digits of a List
+l=[]
+n=int(input())
+for i in range(0,n):
+    l.append(i)
+print(l)
+temp=l[0]
+l[0]=l[n-1]
+l[n-1]=temp
+print(l)
+7. Write a Python program for printing prime numbers up to N. (N>100).
+
+start=int(input("Enter starting value:"))
+end=int(input("Enter N value greater than 100:"))
+for i in range(start,end+1):
+    for j in range(2,i):
+        if i%j==0:
+            break
+    else:
+        print(i,end=" ")
+Output:
+Enter starting value:2
+Enter N value greater than 100:101
+2 3 5 7 11 13 17 19 23 29 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101
+
+8. Write a Python program to construct the following pattern, 
+   using a nested for loop.
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+n=int(input("Enter number of rows:"))
+for i in range(1,n+1):
+    for j in range(1,i+1):
+        print("*",end=" ")
+    print()
+for i in range(1,n+1):
+    for k in range(1,n+1-i):
+        print("*",end=" ")
+    print()
+Output:
+Enter number of rows:5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+9.Write a Python program to print following matrix.
+1	 0	 1	 0	 
+0	 1	 0	 1	 
+1	 0	 1	 0	 
+0	 1	 0	 1
+
+for i in range(1,5):
+    for j in range(1,5):
+        if (i+j)%2==0:
+            print("1\t",end=" ")
+        else:
+            print("0\t",end=" ")
+    print()
+
+Output:
+1	 0	 1	 0	 
+0	 1	 0	 1	 
+1	 0	 1	 0	 
+0	 1	 0	 1
+
+
+Functions:
+
+1. Define a function to find sum of all odd numbers between 1 to n.
+
+def sum_odd(n):
+    sum=0
+    for i in range(1,n):
+        if i%2!=0:
+            sum=sum+i
+    return sum
+        
+num=int(input("Enter any number:"))
+result=sum_odd(num)
+print("Sum of odd numbers between 1 to {} is {}".format(num,result))
+
+Output:
+Sum of odd numbers between 1 to 7 is 9
+
+2. Define a function to check whether a number is palindrome or not.
+
+def palin(n):
+    temp=n
+    rev=0
+    while n!=0:
+        d=n%10
+        rev=rev*10+d
+        n=n//10
+    if temp==rev:
+        print("{} is a Palindrome number".format(num,rev))
+    else:
+        print("{} is not a Palindrome number".format(num,rev))
+        
+num=int(input("Enter any number:"))
+palin(num)
+
+Output:
+12321 is a Palindrome number
+
+3. Define a function to calculate the area of a circle using the formula.
+
+def area_circle(radius):
+    area=(3.14)*(radius**2)
+    return area
+
+radius= eval(input("Enter the radius of a Circle:"))
+result=area_circle(radius)
+print("The area of the circle is:",result)
+
+Output:
+
+Enter the radius of a Circle:4
+The area of the circle is: 50.24
+
+4. Define a function to check whether number is perfect or not.
+A perfect number is a number that can be written as sum of its factors, 
+excluding the number itself.
+
+def perfect(n):
+    sum=0
+    for i in range(1,n):
+        if n%i==0:
+            sum=sum+i
+    return sum
+num=int(input("Enter any number to check:"))
+result=perfect(num)
+
+if result==num:
+    print(result,"is a perfect number")
+else:
+    print(result,"is not a perfect number")
+
+Output:
+Enter any number to check:496
+496 is a perfect number
+
+
+5. Define a function to print multiplication table of any number.
+def table(n):
+    for i in range(n,n+1):
+        for j in range(1,11):
+            print("{}x{}={}".format(n,j,n*j))
+
+num= int(input("Enter any number:"))
+table(num)
+
+Output:
+Enter any number:6
+6x1=6
+6x2=12
+6x3=18
+6x4=24
+6x5=30
+6x6=36
+6x7=42
+6x8=48
+6x9=54
+6x10=60
+
+6. Define a function to print table of a number. Using this function display table of numbers from
+   1 to 10.
+def table():
+    for i in range(1,11):
+        print("Multiplication table of",i)
+        for j in range(1,11):
+            print("{}x{}={}".format(i,j,i*j))
+
+print("Tables between 1 to 10 are:")
+table()
+
+Output:
+Tables between 1 to 10 are:
+Multiplication table of 1
+1x1=1
+1x2=2
+1x3=3
+1x4=4
+1x5=5
+1x6=6
+1x7=7
+1x8=8
+1x9=9
+1x10=10
+Multiplication table of 2
+2x1=2
+2x2=4
+2x3=6
+2x4=8
+2x5=10
+2x6=12
+2x7=14
+2x8=16
+2x9=18
+2x10=20
+It will continue upto 10
+
+7. Define a recursive function to find power of a number.
+   Recursive function can be defined as a function that calls itself directly or indirectly.
+def powar(n,p):
+    if p==0:
+        return 1
+    else:
+        return (n*powar(n,p-1))
+
+num= int(input("Enter any number:"))
+power= int(input("Enter power:"))
+result=powar(num,power)
+print("{} power {} is {}".format(num,power,result))
+
+Output:
+2 power 3 is 8
+
+8. Define a recursive function to count number of digits in a number.
+def count_digits(n):
+    if n>0:
+        n=n//10
+        d=1+count_digits(n)
+    else:
+        return 0
+    return d
+
+num= int(input("Enter any number:"))
+result=count_digits(num)
+print("No of digits in {} is {}".format(num,result))
+
+Output:
+Enter any number:42563
+No of digits in 42563 is 5
+
+9. Write a recursive function to find a find 1^5 + 2^5 + 3^5 +......n^5
+
+def series(n):
+    if n==1:
+        return 1
+    else:
+        return (n**5)+series(n-1)
+
+n=int(input("Enter n value to find sum of the series upto n:"))
+if n==1:
+    print("The sum of the series is:",series(n))
+elif n>1:
+    print("The sum of the series is:",series(n))
+else:
+    print("Enter any integer positive integer to compute series")
+
+Output:
+Enter any integer to find sum of the series:2
+The sum of the series is:33
+
+
+10. Write a python program to find the factorial value of a number using recursion.
+def factorials(n):
+    if n==0:
+        return 1
+    else:
+        return n*factorials(n-1)
+
+num= int(input("Enter any number:"))
+result=factorials(num)
+print("{} factorial is {}".format(num,result))
+
+Output:
+Enter any number:5
+5 factorial is 120
+
+11. Write a python program to implement Tower of Hanoi using recursive function.
+def tower_hanoi(n,source,dest,middle):
+    if (n<1):
+        print("Not Possible")
+        return
+    elif (n==1):
+        print("Move disk {} from {} to {}".format(n,source,dest))
+        return
+    else:
+        tower_hanoi(n-1,source,middle,dest)
+        print("Move disk {} from {} to {}".format(n,source,dest))
+        tower_hanoi(n-1,middle,dest,source)
+        
+n=int(input("Enter number of disk:"))
+tower_hanoi(n,"a","c","b")
+
+Output:
+Enter number of disk:3
+Move disk 1 from a to c
+Move disk 2 from a to b
+Move disk 1 from c to b
+Move disk 3 from a to c
+Move disk 1 from b to a
+Move disk 2 from b to c
+Move disk 1 from a to c
+
+
+12. Write function for finding factors (n) and use factors function to check whether given number
+    n is prime or not.
+def factors(n):
+    print("The factors of the number you have entered are:")
+    count=0
+    for i in range(1,n+1):
+        if n%i==0:
+            print(i,end=" ")
+            count=count+1
+    print()
+    if count==2:
+        print(n,"is a Prime Number")
+    else:
+        print(n,"is Not a Prime Number")
+n=eval(input("Enter any number: "))
+factors(n)
+
+Output:
+Enter any number:9
+The factors of the number you have entered are: 
+1 3 9
+9 is Not a Prime Number
+
+13.Write a python program for printing Fibonacci series
+   a. Write recursive approach implementation
+
+def fibo(n):
+    if n==0:
+        return 0
+    elif n==1 or n==2:
+        return 1
+    else:
+        return fibo(n-1)+fibo(n-2)
+num=int(input("Enter any number:"))
+print("The fibonacci series from 1 to {}".format(n))
+for i in range(num):
+    print(fibo(i))
+
+Output:
+Enter number of terms:5
+Fibonacci sequence:
+0
+1
+1
+2
+3
+
+   b. Write iterative implementation
+
+def fibo(n):
+    first,second=0,1
+    for i in range(n):
+        if i<=1:
+            result=i
+        else:
+            result=first+second
+            first=second
+            second=result
+        print(result)
+
+n=int(input("Enter a n vlaue:"))
+fibo(n)
+
+Output:
+Enter number of terms:6
+fibonacci series are : 
+0
+1
+1
+2
+3
+5
+
+Files
+
+1. Write a Python program to copy the content of one file to other file.
+
+Method-I
+
+sFile = input("Enter the Name of Source File: ")
+tFile = input("Enter the Name of Target File: ")
+
+f = open(sFile, "r")
+data = f.readlines()
+f.close()
+
+f = open(tFile, "w")
+for s in data:
+    f.write(s)
+f.close()
+print("\nFile Copied Successfully!")
+
+Method-II
+sfile = input()
+tfile = input()
+
+with open(sfile, "r") as f1:
+    with open(tfile, "w") as f2:
+        for line in f1:
+            f2.write(line)
+print("Data Copied Successfully")
+2. Write a Python program to count number of words in the above txt file.
+
+
+with open("input.txt",'r') as file:
+    data = file.read()
+    lines = data.split()
+    words = len(lines)
+print(words)
+
+3. Write a Python program to count number of characters without space in the above txt file.
+
+file = open("input.txt", "r")
+#read the content of file and replace spaces with nothing
+data = file.read().replace(" ","")
+#get the length of the data
+number_of_characters = len(data)
+print('Number of characters in text file :', number_of_characters)
+
+4. Write a program that reads data from a file and print the 
+   no of vowels and constants in the file.
+
+file1 = open("input.txt", "r")
+data = file1.read().replace(" ","")
+cons_count=0
+vowel_count =0
+for i in data:
+    if( i=='A' or i=='a' or i=='E' or i=='e' or i=='I'
+        or i=='i' or i=='O' or i=='o'
+	or i=='U' or i=='u'):
+        vowel_count +=1
+    else:
+        cons_count+=1
+        
+print("Number of Vowels are {} and Consonants are {} in file".format(vowel_count,cons_count))
+file1.close()
+
+5. Write a python program that accept file Name as input from the user. 
+   Open the file and count the number of times a character appears in the file.
+
+source=input("Enter the Name of the Source File: ")
+file=open(source,"r")
+freq={}
+data=file.read()
+for word in data:
+	if word in freq:
+		freq[word]+=1
+	else:
+		freq[word]=1
+print("\nThe Frequency of all the Characters in ",source," is: ")
+print(freq)
+
+
+STRINGS
+
+54. Write a program that counts up the number of vowels contained in the string S. 
+Valid vowels are: 'a', 'e', 'i', 'o', and 'u'. 
+For example, if s = 'azcbobobegghakl', your program should print:number of vowels 5
+
+Method-I
+s=input("Enter any string:")
+count=0
+for ch in s:
+    if ch=="A" or ch=="E" or ch=="I" or ch=="O" or ch=="U" or ch=="a" or ch=="e" or ch=="i" or ch=="o" or ch=="u":
+        count+=1
+print("No. of vowels are:",count)
+
+
+Method-II
+string=input("Enter any String: ")
+count=0
+vowel='aeiouAEIOU'
+for letter in string:
+    if letter in vowel:
+        count=count+1
+print("The number of vowels in",string,"is: ",count)
+
+Output:
+No. of vowels are: 5
+
+
+
+55. Assume s is a string of lower-case characters. 
+Write a program that prints the number of times the string 'bob' occurs in s. 
+For example, if s = 'azcbobobegghakl', then your program should
+print Number of times bob occurs is 2.
+
+s=input("Enter any string:")
+s1=s.lower()
+s2=input("Enter sub string to check:")
+count=0
+for i in range(len(s1)):
+    if s1[i:i+3]==s2:
+        count+=1
+print(f"No. of times {s2} occur are {count}")
+
+
+Output:
+Enter any string: azcbobobegghakl
+Enter sub string to check:bob
+No. of times bob occur are 2
+
+
+
+
+56. Write a Python program that finds whether a given character is present in a string or not.
+In case if it is present then it prints the index at which it is present. 
+Do not use built-in find functions to search the character.
+
+str=input("Enter a string:")
+ch=input("Enter a character to searh:")
+for i in range(len(str)):
+    if str[i]==ch:
+        print("The character {} present at index {}".format(ch,i))
+        break
+else:
+    print("The character {} is not present".format(ch))
+
+Output:
+Enter a string:srm university
+Enter a character to searh:u
+The character u present at index 4
+
+57. Write a Python program that counts the occurrence of a character in a string. 
+Do not use builtin function.
+
+string=input("Enter a String:")
+char=input("Enter a Character:")
+count=0
+for i in range(len(string)):
+    if(string[i]==char):
+        count+=1
+print("{} Number of Times {} has appered".format(count,char))
+
+Output:
+Enter a String: SRM UNIVERSITY
+Enter a Character: I
+2 Number of Times I has appered
+
+58. Write a python program for following:
+a. Take a input string with spaces, split it into list of words
+b. From the list of words, create dictionary with keys (only unique words) and values
+(length of the word)
+
+string = input("Enter a String: ")
+l=string.split()
+print(l)
+d={}
+for i in set(l):
+    d[i]=len(i)
+print("The resultant dictionary is")
+print(d)
+
+Output:
+Enter a String:she sells sea shells at sea shores
+['she', 'sells', 'sea', 'shells', 'at', 'sea', 'shore']
+The resultant dictionary is
+{'sells': 5, 'shores': 6, 'shells': 6, 'she': 3, 'sea': 3, 'at': 2}
+
+
+59. Write a python program to count number of vowels, spaces and to find longest word in a given
+input string. (Take input string with spaces)
+
+string = input("Enter a String: ")
+l1=["a","e","i","o","u"]
+vowel=0
+for i in string:
+    if i in l1:
+        vowel+=1
+print("No of vowels are",vowel)       
+l2=string.split()
+print("No of spaces are",len(l2)-1)
+g=" "
+for i in l2:
+    if len(i)>=len(g):
+        g=i
+print("Longest word is",g)
+
+Output:
+
+SRM is University
+No of vowels are 5
+No of spaces are 2
+Longest word is University
+
+
+
+
+60. Write a python program to reverse a string. Do not use inbuilt function.
+
+s=input("Enter Some String:") 
+print(s[::-1])
+
+s=input("Enter Some String:") 
+i=len(s)-1 
+target='' 
+while i>=0: 
+	target=target+s[i] 
+	i=i-1
+print(target)
+
+
+
+
+Lists,Tuples and Dictionary
+
+
+42. Write a Python program to 
+create a list of each digit is a element in a list from a number. 
+Example: Input: 5467, Output: [5,4,6,7]
+
+n=int(input("Enter any number:"))
+l=[]
+strg=str(n)
+for i in strg:
+    l.append(int(i))
+print("List created with elements:",l)
+
+Output:
+Enter any number:1234
+List created with elements: [1, 2, 3, 4]
+
+
+
+43. Write a Python program to form a number from a given list of digits 
+Example: Input: [5, 4, 6,7], Output: 5467
+
+list=eval(input("Enter a list:"))
+res=""
+ls = [str(i) for i in list]
+for s in ls:    or  res = int("".join(ls))
+    res=res+s
+print("Number created with list elements:",res)
+
+Output:
+Enter a list:[1,2,3,4]
+Number created with list elements: 1234
+
+
+
+44. Write a Python program to find the second smallest number 
+and second largest in a list.
+
+list1=eval(input("Enter a list:"))
+list2 = list(set(list1))
+list2.sort()
+print("Second smallest element is:", list2[1])
+print("Second largest element is:", list2[-2])
+
+Output:
+Enter a list:[1,2,3,4,5,6,4,3,3,2]
+Second smallest element is:2
+Second largest element is: 5
+
+
+
+45. Write a python program to create dictionary of index is the key and 
+corresponding prime as value upto 100 {1:2,2:3,3:5.4:7,5:11............}
+
+keys=[]
+primes=[]
+for x in range(1,101):
+    keys.append(x)
+for i in range(2,501):
+    for j in range(2,i):
+        if i%j==0 or len(primes)==100:
+            break
+    else:
+         primes.append(i)
+data=dict(zip(keys,primes))
+print(data)
+
+Output:
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 
+21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 
+39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56,
+ 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
+ 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92,
+ 93, 94, 95, 96, 97, 98, 99, 100]
+[2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 
+71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149,
+ 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 
+229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 
+311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 
+397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467,
+ 479, 487, 491, 499, 503, 509, 521, 523, 541]
+
+{1: 2, 2: 3, 3: 5, 4: 7, 5: 11, 6: 13, 7: 17, 8: 19, 9: 23, 10: 29, 
+11: 31, 12: 37, 13: 41, 14: 43, 15: 47, 16: 53, 17: 59, 18: 61, 19: 67,
+20: 71, 21: 73, 22: 79, 23: 83, 24: 89, 25: 97, 26: 101, 27: 103, 28: 107,
+ 29: 109, 30: 113, 31: 127, 32: 131, 33: 137, 34: 139, 35: 149, 36: 151, 
+37: 157, 38: 163, 39: 167, 40: 173, 41: 179, 42: 181, 43: 191, 44: 193, 
+45: 197, 46: 199, 47: 211, 48: 223, 49: 227, 50: 229, 51: 233, 52: 239, 
+53: 241, 54: 251, 55: 257, 56: 263, 57: 269, 58: 271, 59: 277, 60: 281,
+ 61: 283, 62: 293, 63: 307, 64: 311, 65: 313, 66: 317, 67: 331, 68: 337,
+ 69: 347, 70: 349, 71: 353, 72: 359, 73: 367, 74: 373, 75: 379, 76: 383,
+ 77: 389, 78: 397, 79: 401, 80: 409, 81: 419, 82: 421, 83: 431, 84: 433,
+ 85: 439, 86: 443, 87: 449, 88: 457, 89: 461, 90: 463, 91: 467, 92: 479,
+ 93: 487, 94: 491, 95: 499, 96: 503, 97: 509, 98: 521, 99: 523, 100: 541}
+
+46. Write a Python program to find the smallest value and largest value in a dictionary.
+    Example: Input: D1={1:200,2:3000,3:100,5:20} output: 20, 3000.
+
+Method-I
+
+d={1:200,2:3000,3:100,5:20}
+print("Largest value in the dictionary is",max(d.values()))
+print("smallest value in the dictionary is",min(d.values()))
+
+Method-II
+
+d={1:200,2:3000,3:100,5:20}
+largest=0
+smallest=max(d.values())
+for v in d.values():
+    if v>largest:
+        largest=v
+    elif v<smallest:
+        smallest=v
+print("Largest value in the dictionary is",largest)
+print("smallest value in the dictionary is",smallest)
+
+Output:
+Largest value in the dictionary is 3000
+smallest value in the dictionary is 20
+
+
+48. Write a Python script to generate and print a dictionary that contains a number 
+    (between 1 and n) in the form (x, x*x).
+    Sample Dictionary ( n = 5) : Expected Output : {1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+Meethod=I
+n=int(input("Enter a number: "))
+d = {}
+for x in range(1,n+1):
+    d[x]=x*x
+print(d) 
+ 
+Output:
+Enter a number: 5
+{3: 9, 5: 25, 2: 4, 4: 16, 1: 1}
+
+Meethod=II Using dictionary comprehension
+
+n=int(input("Enter n value:"))
+d={x:x*x for x in range(1,n+1)}
+print(d)
+
+
+49. Write a Python program to convert a list of characters into a string. 
+    Example: Input:["s","t","r","i","n","g"] Output: string
+
+l=eval(input("Enter a list:"))
+strg="".join(l)
+print("list after joining:",strg)
+
+Output:
+list after joining:string
+
+
+
+50. Write a Python program to combine two dictionary adding values for common keys.
+    d1 = {'a': 10, 'b': 20, 'c':30}  d2 = {'a': 30, 'b': 20, 'd':40}
+    Sample output: {'a': 40, 'b': 40, 'd': 40, 'c': 30}
+
+d1=eval(input("Enter first dictionary:"))
+d2=eval(input("Enter second dictionary:"))
+d3={}
+for key in d2:
+    if key in d1:
+        d2[key]=d2[key]+d1[key]
+    else:
+        pass
+d3=d1|d2
+print("Resultant dictionary:",d3)
+
+Output:
+Enter first dictionary:{'a': 10, 'b': 20, 'c':30}
+Enter second dictionary:{'a': 30, 'b': 20, 'd':40}
+Resultant dictionary: {'a': 40, 'b': 40, 'c': 30, 'd': 40}
+
+51. Write a program to print index at which a particular value exists. 
+    If the value exists a multiple location in the list, then print all the indices. 
+    Also, count the number of times the value is repeated in the list.
+
+l=eval(input("Enter a list:"))
+e=int(input("Enter an element to search:"))
+print("Element present at indexes")
+count=0
+for i in range(len(l)):
+    if l[i]==e:
+        print(i)
+        count+=1
+print(f"Element repeated {count} times in a list.")
+
+Output:
+Enter a list:[1,2,3,9,4,5,6,7,4,3,2]
+Enter an element to search:4
+element present at indexes
+4
+8
+Element present 2 times in a list.
+
+
+52. Write a program to remove all duplicate elements in a list.
+
+list1=eval(input("Enter a list:"))
+list2 = list(set(list1))
+print(list2)
+
+Output:
+Enter a list:[1,2,3,4,42,2]
+[1, 2, 3, 4, 42]
+
+53. Write a program to create a list of numbers in the range 1 to 10. Then delete 
+    all the odd numbers from the list and print the final list.
+
+Method-I
+
+n=int(input("Enter a range:"))
+l1=list(range(1,n+1))
+print("List before removal:",l1)
+for i in l1:
+    if i%2!=0:
+       l1.remove(i)
+print("List after removal:",l1)
+
+Outpput:
+Enter a range:10 
+List before removal: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+List after removal: [2, 4, 6, 8, 10]
+ 
+Method-II
+Using list comprehension
+
+l=[i for i in range(1,11)]
+print(l)
+m=[i for i in l if i%2==0]
+print(m)
+
+
+Sorting and Searching
+
+63. Write a Python program to display the elements in an 
+ascending order using bubble sort algorithm.
+
+def bubble_sort(a):
+
+    for i in range(len(a)):
+        for j in range(len(a)-1-i):
+            if a[j]>a[j+1]:
+                a[j],a[j+1]=a[j+1],a[j]
+    return a
+
+
+ul=eval(input("Enter an unsorted list:"))
+print("The unosrted list is:",ul)
+sl=bubble_sort(ul)
+print("The sorted list is:",sl)  
+
+Output:
+Enter an unsorted list:[20,45,10,25,30]
+The unosrted list is: [20, 45, 10, 25, 30]
+The sorted list is: [10, 20, 25, 30, 45]     
+
+64. Write a Python program to display the elements in a 
+descending order using selection sort algorithm.
+
+def selection_sort(a):
+    for i in range(len(a)):
+        cur_max=0
+        for j in range(1,len(a)-i):
+            if a[cur_max]>a[j]:
+                cur_max=j
+            a[len(a)-1-i],a[cur_max]=a[cur_max],a[len(a)-1-i]
+
+    return a
+
+ul=eval(input("Enter an unsorted list:"))
+print("The unosrted list is:",ul)
+sl=selection_sort(ul)
+print("The sorted list is:",sl)
+
+Output:
+Enter an unsorted list:[7,8,5,20,10]
+The unosrted list is: [7, 8, 5, 20, 10]
+The sorted list is: [20, 10, 8, 7, 5]
+
+62. Write a Python program for linear search algorithm.
+def lsearch(list1, key):
+    for i in range(len(list1)):
+        if key == list1[i]:
+            print("key element is found at index:",i)
+            break
+    else:
+        print("element is not found")
+
+
+list1=eval(input("Enter a list:")) 
+key= int(input ("enter the key element:"))
+lsearch(list1, key)
+
+Output:
+Enter a list:[34,23,5,6,7,1,23,8]
+enter the key element:6
+key element is found at index:3
+
+61. Write a Python program for binary search algorithm.
+
+def bsearch (list1, key):
+    low=0
+    high=len(list1)-1
+    Found = False
+    while low<=high and not Found: 
+        mid=(low+high)//2
+        if key== list1 [mid]:
+            Found = True
+        elif key>list1[mid]: 
+            low = mid+1
+        else:
+            high=mid-1
+    
+    if Found == True:
+        print("key is Found")
+    else:
+        print("key is not Found")
+
+list1=eval(input("Enter a list:"))
+list1.sort()
+key=int(input ("enter the key:"))
+bsearch(list1, key)
+
+Output:
+Enter a list:[23,1,4,2,3]
+enter the key:3
+key is Found
+
+
+Object Oriented Programming
+
+
+65. Write a Python program to create a 
+student class (id, Name, mid1_marks, mid2_marks,quiz_marks). 
+Create a student objects and write a function markssList() to dissplay students
+result as given below:
+ROLL NUMBER:
+NAME:
+MID1:
+MID2:
+QUIZ:
+TOTAL: MID1+MID2+QUIZ
+RESULT: A GRADE (IF TOTAL>=80), B GRADE (TOTAL<80 and TOTAL>=60), C
+GRADE (TOTAL>=50 and TOTAL<60)
+(Assume that maximum marks for mid_term1 and mid2_marks is 25 each , and
+quiz_marks is 50).
+
+class Student:
+    def __init__(self,ids,Name,mid1_marks,mid2_marks,quiz_marks):
+        self.ids=ids
+        self.Name=Name
+        self.mid1_marks=mid1_marks
+        self.mid2_marks=mid2_marks
+        self.quiz_marks=quiz_marks
+    def marksList(self):
+        print("Roll:",self.ids)
+        print("Name:",self.Name)
+        print("Mid1:",self.mid1_marks)
+        print("Mid2:",self.mid2_marks)
+        print("Quiz:",self.quiz_marks)
+        TOTAL=self.mid1_marks+self.mid2_marks+self.quiz_marks
+        print("Total:",TOTAL)
+        if TOTAL>=80:
+            print("A GRADE")
+        elif (TOTAL<80 and TOTAL>=60):
+            print("B GRADE")
+        elif(TOTAL>=50 and TOTAL<60):
+            print("C GRADE")
+        else:
+            print("Fail")
+s1=Student(501,"Raj",20,23,45)
+s1.marksList()
+s2=Student(502,"Ravi",21,20,30)
+s2.marksList()
+
+Output:
+Roll:501
+Name: Raj
+Mid1: 20
+Mid2: 23
+Quiz: 45
+Total: 88
+A GRADE
+Roll:502
+Name: Ravi
+Mid1: 21
+Mid2: 20
+Quiz: 30
+Total: 71
+B GRADE
+
+66. Write a Python program to create a EMP class (id, Name, sal), create employee objects and
+write a function PaySlip(empobj) to display particular employee Pay Slip as given below:
+EMP ID:
+EMP NAME:
+EMP BASIC: It is equal to sal.
+EMP HRA:
+EMP DA:
+EMP TAX:
+EMP GROSS SAL: BASIC (sal) +HRA (18% of sal) +DA (10% of sal)
+EMP NET SAL: GROSS SAL-10% of GROSS SAL
+
+class EMP:
+    def __init__(self,ids,Name,sal):
+        self.ids=ids
+        self.Name=Name
+        self.sal=sal
+    def payslip(self):
+        print("-------Employee Payslip-------")
+        print("Id:",self.ids)
+        print("Name:",self.Name)
+        print("Basic Salary:",self.sal)
+        hra=0.18*self.sal
+        da=0.1*self.sal
+        tax=0.05*self.sal
+        gross_sal=self.sal+hra+da
+        net_sal=gross_sal-(0.1*gross_sal)
+        print("HRA:",hra)
+        print("DA:",da)
+        print("TAX:",tax)
+        print("Gross Salary:",gross_sal)
+        print("Net Salary:",net_sal)
+       
+s1=EMP(501,"Raj",50000)
+s1.payslip()
+
+
+Output:
+
+-------Employee Payslip-------
+Id: 501
+Name: Raj
+Basic Salary: 50000
+HRA: 9000.0
+DA: 5000.0
+TAX: 2500.0
+Gross Salary: 64000.0
+Net Salary: 57600.0
+
+67. Write a Python program to define rectangle class with fields length and breadth.   
+Define rectangle class which is inherited from rectangle class with additional field color. 
+Create N color rectangle objects and print which color rectangle is having minimum area.
+
+class Rectangle :
+    def __init__(self, length, breadth):
+        self.length = length
+        self.breadth = breadth
+class Color_Rectangle(Rectangle) :
+    def __init__(self, length, breadth, color):
+        super().__init__(length, breadth)
+        self.color = color
+    def area(self):
+        a=self.length * self.breadth
+        return a
+        
+n = int(input("Enter The Number of Rectangles:"))
+d={}
+for i in range(1,n+1) :
+    print("RECTANGLE:",i)
+    l = int(input("Enter the Length : "))
+    b = int(input("Enter the Breadth : "))
+    c = input("Enter the Color : ")
+  
+
+
+    d[r.area()]=c
+print("Color Of Rectangle Having Minimum Area:",d[min(d.keys())])
+
+
+Output:
+Enter The Number of Rectangles:2
+RECTANGLE: 1
+Enter the Length : 2
+Enter the Breadth : 3
+Enter the Color : Red
+RECTANGLE: 2
+Enter the Length : 4
+Enter the Breadth : 5
+Enter the Color : Green
+Color Of Rectangle Having Minimum Area: Red
+
+68. Write a Python program to define CAR class (model, speed, price) and Firing CAR class
+which inherits from CAR with additional field number of bullets and fire method ().
+
+class Car :
+    def __init__(self, model, speed, price):
+        self.model = model
+        self.speed = speed
+        self.price = price
+class Firing_Car(Car) :
+    def __init__(self, model, speed, price, no_of_bullets):
+        super().__init__(model, speed, price)
+        self.no_of_bullets = no_of_bullets
+    def Fire(self):
+        print("MODEL :", self.model)
+        print("SPEED :", self.speed)
+        print("PRICE :", self.price)
+        print("NUMBER OF BULLETS :", self.no_of_bullets)
+
+car = Firing_Car(2022, 220, 1000000, 50)
+print("\n----CAR DETAILS----")
+car.Fire()
+
+Output:
+
+----CAR DETAILS----
+MODEL : 2022
+SPEED : 220
+PRICE : 1000000
+NUMBER OF BULLETS : 50
+
+69. Write a Program in python using object-oriented concept to create a base class called 
+Polygon and there are three derived classes Named as triangle, rectangle and square.
+The base class consists of the input function for accepting sides length
+The derived classes must have output function for displaying area of triangle, rectangle and
+square.
+
+class Polygon :
+    #def __init__(self):
+        #print("Constructor Executed")
+        #self.base=eval(input("Enter base of a triangle:"))
+        #self.height=eval(input("Enter height of a triangle:"))
+        #self.length=eval(input("Enter length value:"))
+        #self.breadth=eval(input("Enter breadth value:"))
+        #self.side=eval(input("Enter side value:"))
+    def tri_input(self):
+        self.base=eval(input("Enter base of a triangle:"))
+        self.height=eval(input("Enter height of a triangle:"))
+    def rec_input(self):
+        self.length=eval(input("Enter length value:"))
+        self.breadth=eval(input("Enter breadth value:"))
+    def sq_input(self):
+        self.side=eval(input("Enter side value:"))
+        
+class Triangle(Polygon):
+    def tri_area(self):
+        t_area=0.5*self.base*self.height
+        print("Triangle Area :",t_area)
+class Rectangle(Polygon):
+    def rec_area(self):
+        r_area=self.length*self.breadth
+        print("Rectangle Area :",r_area)
+class Square(Polygon):
+    def square_area(self):
+        s_area=self.side*self.side
+        print("Square Area :",s_area)
+
+a = Triangle()
+a.tri_input()
+a.tri_area()
+
+b=Rectangle()
+b.rec_input()
+b.rec_area()
+
+c=Square()
+c.sq_input()
+c.square_area()
+
+
+Output:
+Enter base of a triangle:2
+Enter height of a triangle:3
+Triangle Area : 3.0
+Enter length value:4
+Enter breadth value:2
+Rectangle Area : 8
+Enter side value:4
+Square Area : 16
