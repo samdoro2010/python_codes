@@ -4,6 +4,9 @@
 
 [For Replit File CLICK HERE](https://replit.com/@V-KrishnaKrishn/Python-Codes#main.py )
 
+## All Python Codes pdf file
+[For python pdf all codes CLICK HERE](https://github.com/samdoro2010/python_codes/blob/main/python%20codes1.pdf)
+
 ## All Python Codes Txt file
 [For Python txt all codes CLICK HERE](https://github.com/samdoro2010/python_codes/blob/main/all%20python%20codes.txt)
 
